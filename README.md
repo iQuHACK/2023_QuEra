@@ -7,11 +7,11 @@ The folders [slides/](slides/) and [tutorial/](tutorial/) contain materials simi
 to the ones used during the QuEra challenge workshop.
 
 ## Working on qBraid
-[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/iQuHACK/2023_planning_quera.git)
+[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/iQuHACK/2023_QuEra.git)
 1. If you're working on qBraid, first fork this repository and click the above `Launch on qBraid` button. It will take you to your qBraid Lab with the repository cloned.
 2. Once cloned, open terminal (first icon in the **Other** column in Launcher) and `cd` into this repo. Set the repo's remote origin using the git clone url you copied in Step 1, and then create a new branch for your team:
 ```bash
-cd  <quera_git_repo_name>
+cd  2023_QuEra
 git remote set-url origin <url>
 git branch <team_name>
 git checkout <team_name>
