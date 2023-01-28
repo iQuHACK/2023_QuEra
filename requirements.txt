@@ -1,0 +1,6 @@
+matplotlib
+numpy
+quera-ahs-utils
+amazon-braket-sdk
+networkx
+jupyter
