@@ -25,7 +25,7 @@ The criteria for a valid IS and graph are as follows:
 
 1. The graph must be encoded using the atom positions, e.g., each atom must correspond to the node of the target graph. 
 
-2. We only accept single-component connected graphs. The unit disk graph will be determined by the unit disk radius, which is set by the final detuning value, $\Delta$ using: $R = \left(\frac{C_6}{\Delta} \right)^{1/6}$. 
+2. We only accept single-component connected graphs. The unit disk graph will be determined by the unit disk radius, which is set by the final detuning value, $\Delta$ using: $R = \left(\frac{C_6}{\Delta} \right)^{1/6}$. $C_6$ value can be can be found inside `iquhack_utils.py`
 
 3. The Rydberg state will denote whether an atom/node belongs to the IS for a given shot. Atoms will sometimes not get sorted correctly, resulting in a missing atom. You can keep the IS obtained from that shot as is. 
 
