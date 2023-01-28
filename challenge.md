@@ -53,7 +53,7 @@ The probability of finding larger independent sets depends significantly on the 
 
 Most methods to optimize pulses for quantum state preparation require a feedback loop iterating over multiple iterations of the analog hamiltonian program. Given the limited availability of QPU time, we ask each group to use classical quantum simulation tools to benchmark and/or design the rydberg pulses, the most straightforward being using Braket's local simulator tool. 
 
-When your group is ready to submit a Task to Aquila, we ask participants to limit the number of shots to between 50 - 100 per task. Each group will be allowed a maximum of 20 tasks per window. This is to allow all teams to have a chance to run tasks within each availability window. The windows will be:
+When your group is ready to submit a Task to Aquila, we ask participants to limit the number of shots to between 50 - 100 per task. Each group will be allowed a maximum of 60 tasks per window. This is to allow all teams to have a chance to run tasks within each availability window. The windows will be:
 
 1. Sat (1/28) 2pm-6pm ET,
 2. Sat (1/28) 10pm – Sun (1/29) 2am ET, and
