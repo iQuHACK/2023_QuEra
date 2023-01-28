@@ -2,5 +2,5 @@
 
 ### Sample Team
 
-- [Code](TEAM_NAME)
+- [Code](q)
 - [Documentation](https://url_to_documentation.com)
