@@ -72,9 +72,14 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 ## Using GraphFactory to Make + Test Graphs
 
 GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
-| ![N4](Documentation.assets/iquhack/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
+
+| ![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.26.25%20AM.png>) | ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.31.39%20AM.png>) |
+
+We encountered errors related to a minimum y-coordinate separation, due to the laser architecture of the machine. To fix this, we modified GraphFactory to only plot particular y-separations, using a row formation. With this feature, drawn points will be set to the nearest y-coordinate allowed. Below are adjusted graphs of interest: 
+
+|![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_4.19.57%20AM.png>)|![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_inverted_4.28.30%20AM.png>)|
 | ---------------------------------- | -------------------------------------------------- |
-| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
+|![N5](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/InvertedTree_4.58.49%20AM.png>)|![N6](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Tree_4.54.45%20AM.png>)|
 Motivation: We were interested in comparing graph structures based on tail versus edge graph endings. Our initial idea was that the more tail-endings we could include, the more state 0 nodes we'd observe. To test this against the reverse case - graphs with many more edge-endings - we constructed variations on a 16-node 'flower object', shown below. We also tested examples of tree-like and inverted-tree graphs, all modified simply by cursor movements in GraphFactor. 
 
 ## Pulse Optimization 
@@ -85,15 +90,11 @@ $$
 $$
 And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
 $$
-\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega t/2 - \pi)
+\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
 $$
+ where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
-| ![default](Documentation.assets/default_drive.png) | ![gaussian](Documentation.assets/gaussian_drive.png) | ![sinc^2](Documentation.assets/sinc_drive.png)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 401ef9a9fa3684e93f6e3b60755400843e91f17c
 ## Post Processing
 
 In many cases, after the adiabatic algorithm is completed, the graph will have converged to an invalid solution due to the inherent stochastic nature of the process. In these cases, however, we do not necessarily need to discard the shot. Although we may not have reached a maximally independent set, it is still likely that the algorithm will have converged towards some sort of low energy minima. To this end we introduce a classical postprocessing algorithm, which takes an incomplete result, and attempts to patch it.
@@ -109,5 +110,7 @@ The algorithm consists of three main steps:
 It is important to note that this algorithm is $O(2^n)$ where $n$ is the number of ground states that have the potential to be Rydberg. Therefore for large graphs it has the potential to take an immensely long time, and so we place a cut-off dependent on the number of potentially excitable states. We choose this to be $20$ to find MIS solutions in nearly all cases while still taking fewer than a couple seconds. 
 
 ## Sources
-[1] Ebadi, Sepehr, Alexander Keesling, Madelyn Cain, Tout T. Wang, Harry Levine, Dolev Bluvstein, Giulia Semeghini, et al. “Quantum Optimization of Maximum Independent Set Using Rydberg Atom Arrays.” Science 376, no. 6598 (June 10, 2022): 1209–15. https://doi.org/10.1126/science.abo6587.
-[2] Hartuv, Erez, and Ron Shamir. “A Clustering Algorithm Based on Graph Connectivity.” Information Processing Letters 76 (December 1, 2000): 175–81. https://doi.org/10.1016/S0020-0190(00)00142-3.
+
+https://www.quera.com/aquila
+
+https://github.com/iQuHACK/2023_QuEra
