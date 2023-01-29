@@ -43,7 +43,7 @@ We used this property in our method of stitching modular graphs together, now th
 
 ## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
 
-Suppose that $N\geq 2$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
+Suppose that $N\geq 2$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
 
 $\set{\lambda cos(\frac{2\pi k}{N}),\lambda sin(\frac{2\pi k}{N})\space|\space k\in\set{0,1,...,N-1}}$ where $\lambda$ is a scalar multiple equal to the new radii of the disks under a dilation by the factor $\lambda$. We wish to find the largest integer $N$ such that there is some $\lambda<1$ such that all disks enclose exactly one center.
 
@@ -53,7 +53,7 @@ $d(N)=\sqrt{\lambda^2+\lambda^2-2(\lambda)(\lambda)\cos(\frac{2\pi}{N})}=\sqrt{2
 
 and requiring that $d(N)\geq1$ yields
 
-$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows that if $\lambda=\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$, the distance between the centers of adjacent disks is exactly $1$. For some fixed $N$, $\lambda<\lambda_{min}$ would imply that $d(N)<1$ and therefore that there is a disc that encloses at least two
+$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. Therefore, $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ gives the minimum value of $\lambda$ that guarantees that all disks enclose exactly one center, and if $\lambda_{min}(N)\geq1$, there are necessarily no $\lambda<1$ such that all disks enclose exactly one center. If there is some $\lambda<1$ such that all disks enclose exactly one center, it must be the case that $\lambda_{min}<1$
 
 | ![N4](Documentation.assets/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
 | ---------------------------------- | -------------------------------------------------- |
@@ -69,7 +69,7 @@ $\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows
 
 
 
-## Companion for Designing Unit Disk Graphs
+## Graph Factory, a Companion for Designing Unit Disk Graphs
 
 
 
