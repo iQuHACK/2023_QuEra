@@ -4,9 +4,11 @@
 
 # Problem
 
-An analog Hamiltonian simulation computer solves this problem by trying to be in the lowest energy state.
+Find Maximum Independent State of graphs that constructed by repetition of small 3*N graphs (like the one we used) while trying to be in the lowest energy state.
 
 # Approach 
+
+
 
 ## Graph design
 On the picture below one can find the graph structure we have used in the challenge in order to maximize the number of independent sets. The way the pattern is created is by multiplying the building block element depicted in the next figure. 
