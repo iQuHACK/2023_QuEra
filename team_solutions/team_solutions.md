@@ -10,6 +10,8 @@ Corey Ferrier, Avneesh Verma, Dhruv Srinivasan, Jade LeSchack, Jyoti Rani
 
 - [100 qubit snake](q/100_qubit_snake.ipynb)
 
+- [QAOA Tests](q/qaoa_tests.ipynb)
+
 #### Documentation
 
 - [Documentation](https://url_to_documentation.com)
