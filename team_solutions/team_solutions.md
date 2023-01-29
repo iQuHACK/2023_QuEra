@@ -1,6 +1,20 @@
-# List of Challenges
+# QuEra Challenge iQuHack 2023
 
-### Sample Team
+### Team *Q*
+Corey Ferrier, Avneesh Verma, Dhruv Srinivasan, Jade LeSchack, Jyoti Rani
 
-- [Code](TEAM_NAME)
-- [Documentation](https://url_to_documentation.com)
+
+#### Code
+
+- [99 qubit random shape](q/99_qubits_random.ipynb)
+
+- [100 qubit snake](q/100_qubit_snake.ipynb)
+
+- [QAOA Tests](q/qaoa_tests.ipynb)
+
+#### Documentation
+
+- [Documentation](q/iQuHackDocumentation.pdf)
+
+- [Presentation](q/iQuHackPresentation.pdf)
+
