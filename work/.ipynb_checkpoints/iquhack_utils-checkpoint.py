@@ -34,8 +34,8 @@ def visualize_graph(ax,graph,pos_dict,node_colors = "#6437FF"):
     
     # pos_dict = {a:positions[a] for a in range(positions.shape[0])}
     nx.draw_networkx_edges(graph,pos_dict,width=10/np.sqrt(len(graph.nodes)),ax=ax)
-    nx.draw_networkx_nodes(graph,pos_dict,node_size=1225/np.sqrt(len(graph.nodes)),node_color=node_colors,ax=ax)
-    
+    nx.draw_networkx_nodes(graph,pos_dict, nodelist=list(range(len(pos_dict))),node_size=1225/np.sqrt(len(graph.nodes)),node_color=node_colors,ax=ax)
+    # print(pos_dict)
 
 def get_graph_from_blockade_radius(register : AtomArrangement, blockade_radius:float):
     """Get graph based on blockade radius. 
