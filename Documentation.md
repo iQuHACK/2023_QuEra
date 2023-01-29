@@ -56,7 +56,6 @@ $\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows
 
 **Figure 3:** Regular polyhedron junctions for $(N,\lambda)=(4,1),(5,1),(5,\lambda_{min}(5)),(6,1)$
 
-
 ## GraphFactory: Design and test unit graphs
 
 To easily design, test, and visualize unit disk graphs, we created software written in Processing which allows a user to design unit disk graphs and export them as lists. This software was the engine that drove our creative exploration of many different types of graphs, which we discuss below. The features of the software include the following:
@@ -69,6 +68,14 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 
 ![GraphFactory](Documentation.assets/GraphFactory.png)    
 
+
+## Using GraphFactory to Make + Test Graphs
+
+GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
+| ![N4](Documentation.assets/iquhack/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
+| ---------------------------------- | -------------------------------------------------- |
+| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
+Motivation: We were interested in comparing graph structures based on tail versus edge graph endings. Our initial idea was that the more tail-endings we could include, the more state 0 nodes we'd observe. To test this against the reverse case - graphs with many more edge-endings - we constructed variations on a 16-node 'flower object', shown below. We also tested examples of tree-like and inverted-tree graphs, all modified simply by cursor movements in GraphFactor. 
 
 ## Pulse Optimization 
 
@@ -83,14 +90,23 @@ $$
 
 | ![default](Documentation.assets/default_drive.png) | ![gaussian](Documentation.assets/gaussian_drive.png) | ![sinc^2](Documentation.assets/sinc_drive.png)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 401ef9a9fa3684e93f6e3b60755400843e91f17c
 ## Post Processing
 
-22 unextractable for big_ben
+In many cases, after the adiabatic algorithm is completed, the graph will have converged to an invalid solution due to the inherent stochastic nature of the process. In these cases, however, we do not necessarily need to discard the shot. Although we may not have reached a maximally independent set, it is still likely that the algorithm will have converged towards some sort of low energy minima. To this end we introduce a classical postprocessing algorithm, which takes an incomplete result, and attempts to patch it.
 
-## Experience
+The algorithm consists of three main steps:
 
+1. Find any instances of two adjacent Rydberg states on the graph, and set both of them to ground.
+2. Find every ground state that could become Rydberg without violating the independence condition.
+3. Iterate through all combinations of replacing ground states with Rydberg until an MIS solution is found.
 
+![Postprocessing Flow](Documentation.assets/postprocessing.png)
+
+It is important to note that this algorithm is $O(2^n)$ where $n$ is the number of ground states that have the potential to be Rydberg. Therefore for large graphs it has the potential to take an immensely long time, and so we place a cut-off dependent on the number of potentially excitable states. We choose this to be $20$ to find MIS solutions in nearly all cases while still taking fewer than a couple seconds. 
 
 ## Sources
 
