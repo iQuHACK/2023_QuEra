@@ -6,7 +6,17 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Contents
 
-[TOC]
+- [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
+  - [Contents](#contents)
+  - [Theoretical Motivation](#theoretical-motivation)
+  - [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
+  - [Analysis of the $(N,\lambda)$ Regular Polyhedron Junction](#analysis-of-the-nlambda-regular-polyhedron-junction)
+  - [Graph Factory, a Companion for Designing Unit Disk Graphs](#graph-factory-a-companion-for-designing-unit-disk-graphs)
+  - [Using GraphFactor to Make + Test Graphs](#using-graphfactor-to-make--test-graphs)
+  - [Pulse Optimization ](#pulse-optimization-)
+  - [Post Processing](#post-processing)
+  - [Sources](#sources)
+
 
 ## Theoretical Motivation
 
