@@ -8,7 +8,7 @@ Find Maximum Independent State of graphs that constructed by repetition of small
 
 # Approach 
 
-The idea we used in the challenge was to encode the MIS solution into the ground state of Hamiltonian. Next, we used the quantum adiabatic algorithm (QAA) to evolve simple Hamiltonian to desired complicated Hamiltonian. 
+The idea we used in the challenge was to encode the MIS solution into the ground state of Hamiltonian. Next, we used the quantum adiabatic algorithm (QAA), Rydberg blockade, to evolve simple Hamiltonian to desired complicated Hamiltonian. 
 
 ## Graph design
 On the picture below one can find the graph structure we have used in the challenge in order to maximize the number of independent sets. The way the pattern is created is by multiplying the building block element depicted in the next figure. 
