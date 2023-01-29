@@ -1,7 +1,7 @@
 # Modularized Sharp Networks for State Preparation into MIS
 QuEra Challenge, iQuHACK 2023
 
-Yale University Team
+QuEra Yale University Team
 Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Contents
@@ -16,9 +16,11 @@ The Hamiltonian for the array of $N\space Rb$ atoms is given as:
 
 $\frac{H}{\hbar}=\sum_i{\Omega (t)(e^{i\phi(t)}\ket{0_i}\bra{1_i}+e^{-i\phi(t)}\ket{1_i}\bra{0_i})}-\Delta(t)\sum_i{\hat{n_i}}+\sum_{i<j}{V_{ij}\hat{n_i}\hat{n_j}}$,
 
-where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i=1,2,...,N$, $\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy  $C_6 =5.42\cdot10^{-24}$ (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency). The natural characteristic distance $R=(\frac{C_6}{\Delta_{max}})^{1/6}$ is called the unit disk radius. Suppose atoms $i,j$ are in their respective Rydberg states $\ket{1_i},\ket{1_j}$ and have separation distance $|\vec{r_i}-\vec{r_j}|<R$.  Then the interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}\gg\Delta_{max}$ , demonstrating that a large repulsive interaction cannot be overcome by atom-field coupling at smaller length scales. The tendency Rydberg blockade**. It is notable that the potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ has an interaction tail, meaning that 
+where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i=1,2,...,N$, $\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy  $C_6 =5.42\cdot10^{-24}$ (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency). The natural characteristic distance $R=(\frac{C_6}{\Delta_{max}})^{1/6}$ is called the unit disk radius. Suppose atoms $i,j$ are in their respective Rydberg states $\ket{1_i},\ket{1_j}$ and have separation distance $|\vec{r_i}-\vec{r_j}|<R$.  Then the interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}\gg\Delta_{max}$ , demonstrating that a large repulsive interaction cannot be overcome by atom-field coupling in such close proximity. The notion of  the **Rydberg blockade** is simply the tendency for atoms to not simultaneous occupy Rydberg states at distance scales $L\lesssim R$ . It is notable that the potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ has an interaction tail; even for separation distances $|\vec{r_i}-\vec{r_j}|>R$, $V_{ij}$ does not vanish despite being very small as shown in the figure below.
 
 ![inverse_sixth_power_spike](Documentation.assets/inverse_sixth_power_spike.png)
+
+**Figure 1:**  The neighborhood around an inverse sextic potential $V\propto\frac{1}{|\vec{r}|^6}$
 
 ## Graph Pictures
 
@@ -35,6 +37,11 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 
 
 
+$\lambda(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$
+
+| ![N4](Documentation.assets/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
+| ---------------------------------- | -------------------------------------------------- |
+| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
 
 
 
@@ -46,10 +53,9 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 
 
 
+## Companion for Designing Unit Disk Graphs
 
 
-
-## Companion for Unit Disk Graph Construction 
 
 Exact alignment of y is going to be necessary
 
@@ -59,17 +65,19 @@ Exact alignment of y is going to be necessary
 
 Denote the sine cardinal function as $${sinc}(t) = \cases{\frac{\sin(t)}{t}&$,t\neq0$\cr1&$,t=0$}$$.
 
-Then consider the wave profile $p(t)=af(\frac{\omega t}{2}-\pi), t\ge0$,
+Then consider the wave profile $p_{sinc}(t)=af(\frac{\omega t}{2}-\pi), t\ge0$,
 
  where $${f}(t) = \cases{{sinc^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
-In order
+Gaussian pulse: $p_{gaussian}(t)=e^{-x^2}$
 
-Logistic: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
+
+
+Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 
 ## Post Processing
 
-
+22 unextractable for big_ben
 
 ## Experience
 
