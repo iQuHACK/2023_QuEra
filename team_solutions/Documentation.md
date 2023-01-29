@@ -55,8 +55,6 @@ In the above figure, we present a graph that whose vertices we change from their
 **Figure 2:** **Rydberg-Tail Selective State Initialization**
 Background: 
 
-In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
-
 ## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
 
 Suppose that $N$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
