@@ -1,6 +1,6 @@
-# List of Challenges
+# QuEra Challenge 
 
-### Sample Team
+### IsaacChuangFanClub
 
 - [Code](IsaacChuangFanClub)
 - [Documentation](IsaacChuangFanClub/final_doc.md)
