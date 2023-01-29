@@ -30,6 +30,7 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 | ![con_graph_original](Documentation.assets/con_graph_with_four_turned_on_3tails-1674976129323-15-1674976130635-17.png) | ![graph_with_four_turned_on_3tails](Documentation.assets/graph_with_four_turned_on_3tails-1674976229812-34.png) |
 | ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
 |                                                              |                                                              |
+
 In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
 We decided to simulate and run a modular graph that can be "stitched" together with other graphs in order to create larger maximum independent sets. This required us to be able to control the edge node behaviour of our modular pieces in order to put them together while minimally affecting the maximum independent sets. Our inital idea was to do this through selective detuning of certain atoms that occured on the edge of our graph. Working within the hardware constraints, we realized that was not possible, and so set out to create a different way to be able to selectively influence edge-atom state behaviour. 
 
@@ -74,7 +75,7 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 ![GraphFactory](Documentation.assets/GraphFactory.png)    
 
 
-## Using GraphFactory to Make + Test Graphs
+## Using GraphFactory to Make & Test Graphs
 
 GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
 
@@ -139,6 +140,16 @@ We constructed a graph that satisfies this criterion. We were able to obtain res
 |                         five_flower                          |                                                          |
 
 
+
+## Results
+
+**Name**|**Shots**|**Best**|**Most Frequent**|**Intractibility Rate**|**EV**
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
+Hyperflower|50|42|37|0.08|37.48
+Big Ben|50|37|34|0.08|33.89
+Five Flower|50|38|33|0|37.69
+More Connected Inverted Tree|50|39|36|0.06|38.09
+Hyperflower|1|36|36|0|36
 
 ## Sources
 
