@@ -36,3 +36,5 @@ The result of running the demonstration algorithm with the enhanced parameters i
 ![Graph result](./assests/result.png){width=60%}
 
 ![Graph shots analysis](./assests/analysis.png){width=60%}
+
+Slides: https://docs.google.com/presentation/d/1wDG__AXQAmi6gGfz51vwd4McepYewIAuku8Dp_C0dVg/edit?usp=sharing
