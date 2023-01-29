@@ -85,11 +85,15 @@ $$
 $$
 And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
 $$
-\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
+\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega t/2 - \pi)
 $$
- where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
+| ![default](Documentation.assets/default_drive.png) | ![gaussian](Documentation.assets/gaussian_drive.png) | ![sinc^2](Documentation.assets/sinc_drive.png)
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 401ef9a9fa3684e93f6e3b60755400843e91f17c
 ## Post Processing
 
 In many cases, after the adiabatic algorithm is completed, the graph will have converged to an invalid solution due to the inherent stochastic nature of the process. In these cases, however, we do not necessarily need to discard the shot. Although we may not have reached a maximally independent set, it is still likely that the algorithm will have converged towards some sort of low energy minima. To this end we introduce a classical postprocessing algorithm, which takes an incomplete result, and attempts to patch it.
