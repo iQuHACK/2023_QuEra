@@ -30,7 +30,7 @@ The result of running the demonstration algorithm with the enhanced parameters i
 |Variable|Quantity|
 |:----|----:|
 |Nshots|80|
-|Number of independent sets|51|
+|Size of Maximum independent set|51|
 |Total number of nodes|93|
 
 
