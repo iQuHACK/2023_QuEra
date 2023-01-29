@@ -19,9 +19,8 @@ git checkout <team_name>
 
 3. Use the environment manager (**ENVS** tab in the right sidebar) to [install environment](https://qbraid-qbraid.readthedocs-hosted.com/en/latest/lab/environments.html#install-environment) "Amazon Braket". The installation should take ~2 min.
 4. Once the installation is complete, click **Activate** to [add a new ipykernel](https://qbraid-qbraid.readthedocs-hosted.com/en/latest/lab/kernels.html#add-remove-kernels) for "Amazon Braket".
-5. From the **FILES** tab in the left sidebar, double-click on the `QuEra` directory.
-6. Open and follow instructions in [`verify_setup.ipynb`](verify_setup.ipynb) to verify your "QuEra" environment setup.
-7. You are now ready to begin hacking! Work with your team to complete either of the challenges listed above.
+5. From the **FILES** tab in the left sidebar, double-click on the `2023_QuEra` directory.
+6. You are now ready to begin hacking! Work with your team to complete either of the challenges listed above.
 
 For other questions or additional help using qBraid, see [Lab User Guide](https://qbraid-qbraid.readthedocs-hosted.com/en/latest/lab/overview.html), or reach out on [Discord](https://discord.gg/gwBebaBZZX).
 
