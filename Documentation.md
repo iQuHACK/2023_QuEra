@@ -50,11 +50,7 @@ In the top figure, we present a graph with a well defined maximum indepndent set
 
 ## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
 
-<<<<<<< HEAD
 Suppose that $N\geq 2$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
-=======
-Suppose that $N$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
->>>>>>> 38ea6e71404f64db66303616ef1e84c5cc8d07eb
 
 $\set{\lambda cos(\frac{2\pi k}{N}),\lambda sin(\frac{2\pi k}{N})\space|\space k\in\set{0,1,...,N-1}}$ where $\lambda$ is a scalar multiple equal to the new radii of the disks under a dilation by the factor $\lambda$. We wish to find the largest integer $N$ such that there is a $\lambda<1$ such that all disks enclose exactly one center.
 
@@ -112,12 +108,8 @@ Gaussian pulse: $p_{gaussian}(t)=e^{-x^2}$
 Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 
 ## Post Processing
-
-22 unextractable for big_ben
+To be written by Alex
 
 ## Sources
 [1] Ebadi, Sepehr, Alexander Keesling, Madelyn Cain, Tout T. Wang, Harry Levine, Dolev Bluvstein, Giulia Semeghini, et al. “Quantum Optimization of Maximum Independent Set Using Rydberg Atom Arrays.” Science 376, no. 6598 (June 10, 2022): 1209–15. https://doi.org/10.1126/science.abo6587.
 [2] Hartuv, Erez, and Ron Shamir. “A Clustering Algorithm Based on Graph Connectivity.” Information Processing Letters 76 (December 1, 2000): 175–81. https://doi.org/10.1016/S0020-0190(00)00142-3.
-https://www.quera.com/aquila
-
-https://github.com/iQuHACK/2023_QuEra
