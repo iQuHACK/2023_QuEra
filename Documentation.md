@@ -73,13 +73,18 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 
 GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
 
-| ![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.26.25%20AM.png>) | ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.31.39%20AM.png>) |
+| ![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.26.25%20AM.png>) |
+| ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.31.39%20AM.png>) |
 
 We encountered errors related to a minimum y-coordinate separation, due to the laser architecture of the machine. To fix this, we modified GraphFactory to only plot particular y-separations, using a row formation. With this feature, drawn points will be set to the nearest y-coordinate allowed. Below are adjusted graphs of interest: 
 
-|![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_4.19.57%20AM.png>)|![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_inverted_4.28.30%20AM.png>)|
-| ---------------------------------- | -------------------------------------------------- |
-|![N5](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/InvertedTree_4.58.49%20AM.png>)|![N6](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Tree_4.54.45%20AM.png>)|
+|![5flower](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_4.19.57%20AM.png>) 5 Flower | ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/5Flower_inverted_4.28.30%20AM.png>) Inverted 5 Flower|
+| :----------------------------------------------------------: | :------------------------------------------------------: |
+|![N5](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/InvertedTree_4.58.49%20AM.png>) Inverted Tree|![N6](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/Documentation.assets/iquhack/Tree_4.54.45%20AM.png>) Tree|
+
+
+
+
 Motivation: We were interested in comparing graph structures based on tail versus edge graph endings. Our initial idea was that the more tail-endings we could include, the more state 0 nodes we'd observe. To test this against the reverse case - graphs with many more edge-endings - we constructed variations on a 16-node 'flower object', shown below. We also tested examples of tree-like and inverted-tree graphs, all modified simply by cursor movements in GraphFactor. 
 
 ## Pulse Optimization 
@@ -123,5 +128,7 @@ It is important to note that this algorithm is $O(2^n)$ where $n$ is the number 
 
 
 ## Sources
-[1] Ebadi, Sepehr, Alexander Keesling, Madelyn Cain, Tout T. Wang, Harry Levine, Dolev Bluvstein, Giulia Semeghini, et al. “Quantum Optimization of Maximum Independent Set Using Rydberg Atom Arrays.” Science 376, no. 6598 (June 10, 2022): 1209–15. https://doi.org/10.1126/science.abo6587.
-[2] Hartuv, Erez, and Ron Shamir. “A Clustering Algorithm Based on Graph Connectivity.” Information Processing Letters 76 (December 1, 2000): 175–81. https://doi.org/10.1016/S0020-0190(00)00142-3.
+
+https://www.quera.com/aquila
+
+https://github.com/iQuHACK/2023_QuEra
