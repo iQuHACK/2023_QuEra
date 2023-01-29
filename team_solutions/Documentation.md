@@ -6,7 +6,22 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Contents
 
-[TOC]
+- [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
+  * [Contents](#contents)
+  * [Theoretical Motivation](#theoretical-motivation)
+  * [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
+  * [Analysis of the $(N,\lambda)$ Regular Polyhedron Junction](#analysis-of-the---n--lambda---regular-polyhedron-junction)
+  * [GraphFactory: Design and test unit graphs](#graphfactory--design-and-test-unit-graphs)
+  * [Using GraphFactory to Make & Test Graphs](#using-graphfactory-to-make---test-graphs)
+  * [Pulse Optimization](#pulse-optimization)
+  * [Post Processing](#post-processing)
+  * [Using Rydberg Tails to Enforce Boundary Conditions](#using-rydberg-tails-to-enforce-boundary-conditions)
+  * [Graphs](#graphs)
+  * [Results](#results)
+  * [Sources](#sources)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Theoretical Motivation
 
