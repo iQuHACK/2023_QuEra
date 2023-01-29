@@ -122,7 +122,7 @@ It is important to note that this algorithm is $O(2^n)$ where $n$ is the number 
 ## Using Rydberg Tails to Enforce Boundary Conditions
 In this project, one class of graphs we explored concerns many real-world examples, such as the organization of human and animal populations, transportation, and stock portfolios, where there is a high degree of clumping among clusters in the graph and sparse connectivity between clusters. We realized that if we were able to impose boundary conditions on graphs, we could effectively split them up and solve them separately, and then stich the solutions together at the end. This would introduce a linear time complexity, which could theoretically be lower given the lower samples required to obtain accurate results from smaller graphs.
 
-The constraints of the hardware would not allow us to prepare individual qubit states directly via local detunings or coupling to the environment. We realized through experimentation on simpler models and modeling in qutip that the smooth decay of the Rydberg interaction potential leads to a lower ``energy penalty" for excited states at the exterior of the lattice in comparison with atoms that order higher than one. This causes the Rydberg states in qubits at the exterior of the lattice to be heaevily favored. We used this by engineering ``tails" of length one or two to force a desired atom into the ground state or the excited state with high probability. 
+The constraints of the hardware would not allow us to prepare individual qubit states directly via local detunings or coupling to the environment. We realized through experimentation on simpler models and modeling in qutip that the smooth decay of the Rydberg interaction potential leads to a lower "energy penalty" for excited states at the exterior of the lattice in comparison with atoms that order higher than one. This causes the Rydberg states in qubits at the exterior of the lattice to be heaevily favored. We used this by engineering "tails" of length one or two to force a desired atom into the ground state or the excited state with high probability. 
 
 We constructed a graph that satisfies this criterion. We were able to obtain results with the correct boundary conditions with high probability. The example below shows one of four sections of a clustered graph, with tails added to fix the atom labeled "zero" in the ground state.
 
@@ -137,7 +137,6 @@ We constructed a graph that satisfies this criterion. We were able to obtain res
 |                 more_connected_inverted_tree                 |                         big_ben                          |
 |     ![five_flower](Documentation.assets/five_flower.png)     |                                                          |
 |                         five_flower                          |                                                          |
-
 
 
 
