@@ -52,12 +52,12 @@ void draw(){
   }
   if(active != null && mousePressed){
     active.x = mouseX;
-    active.y = mouseY;
+    active.y = round(mouseY/min_dist)*min_dist;
   }
 }
 
 void mouseClicked(){
-  list.add(new Point(mouseX, mouseY));
+  list.add(new Point(round(mouseX/min_dist)*min_dist, mouseY));
 }
 
 void mousePressed(){
