@@ -116,7 +116,8 @@ Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 22 unextractable for big_ben
 
 ## Sources
-
+[1] Ebadi, Sepehr, Alexander Keesling, Madelyn Cain, Tout T. Wang, Harry Levine, Dolev Bluvstein, Giulia Semeghini, et al. “Quantum Optimization of Maximum Independent Set Using Rydberg Atom Arrays.” Science 376, no. 6598 (June 10, 2022): 1209–15. https://doi.org/10.1126/science.abo6587.
+[2] Hartuv, Erez, and Ron Shamir. “A Clustering Algorithm Based on Graph Connectivity.” Information Processing Letters 76 (December 1, 2000): 175–81. https://doi.org/10.1016/S0020-0190(00)00142-3.
 https://www.quera.com/aquila
 
 https://github.com/iQuHACK/2023_QuEra
