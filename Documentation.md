@@ -36,8 +36,6 @@ Background:
 
 In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
 
-
-
 ## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
 
 Suppose that $N$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
@@ -59,38 +57,31 @@ $\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows
 **Figure 3:** Regular polyhedron junctions for $(N,\lambda)=(4,1),(5,1),(5,\lambda_{min}(5)),(6,1)$
 
 
+## GraphFactory: Design and test unit graphs
 
+To easily design, test, and visualize unit disk graphs, we created software written in Processing which allows a user to design unit disk graphs and export them as lists. This software was the engine that drove our creative exploration of many different types of graphs, which we discuss below. The features of the software include the following:
+* creating, dragging, and deleting nodes
+* displaying the Rydberg Blockade distance
+* automatically representing connections between adjacent nodes
+* displaying the physical spatial restrictions of the QuERA Aquila processor to 75 x 76 $\mu$m
+* producing a warning if two atoms are positioned closer than the 4$\mu$m resolution of the laser.
+* Aligning the atoms on the y-axis to be spaced in increments of $4\mu$m.
 
-
-
-
-
-
-## Companion for Designing Unit Disk Graphs
-
-
-
-Exact alignment of y is going to be necessary
-
-## Using GraphFactor to Make + Test Graphs
-
-GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
-| ![N4](Documentation.assets/iquhack/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
-| ---------------------------------- | -------------------------------------------------- |
-| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
-Motivation: We were interested in comparing graph structures based on tail versus edge graph endings. Our initial idea was that the more tail-endings we could include, the more state 0 nodes we'd observe. To test this against the reverse case - graphs with many more edge-endings - we constructed variations on a 16-node 'flower object', shown below. We also tested examples of tree-like and inverted-tree graphs, all modified simply by cursor movements in GraphFactor. 
-
+![GraphFactory](Documentation.assets/GraphFactory.png)    
 
 
 ## Pulse Optimization 
 
-Denote the sine cardinal function as $${sinc}(t) = \cases{\frac{\sin(t)}{t}&$,t\neq0$\cr1&$,t=0$}$$.
+In the end, our attempts at pulse optimization failed to yield results better than the default pulse shapes used in the tutorials. We tried these pulses on a small number of qubits in simulation. We first tried a Gaussian pulse, and we found that the Gaussian pulse nearly always excited the state outside of the lowest energy eigenspace. The Gaussian waveform chosen was
+$$
+\Omega_{gaussian}(t)= A e^{-(x^2-\tau/2)/(2\sigma^2)}
+$$
+And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
+$$
+\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
+$$
+ where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
-Then consider the wave profile $p_{sinc}(t)=af(\frac{\omega t}{2}-\pi), t\ge0$,
-
- where $${f}(t) = \cases{{sinc^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
-
-Gaussian pulse: $p_{gaussian}(t)=e^{-x^2}$
 
 
 
