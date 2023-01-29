@@ -21,10 +21,7 @@ On the picture below one can find the graph structure we have used in the challe
 ## Blockade radius optimization
 
 ## Pulse Optimization
-
-### References
-
-[1] **Minimizing irreversible losses in quantum systems by local counterdiabatic driving**
+![Pulse optimization](./assests/pulse_opt.pdf)
 
 # Results
 The result of running the demonstration algorithm with the enhanced parameters is presented below.
