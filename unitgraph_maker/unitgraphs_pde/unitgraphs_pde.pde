@@ -21,7 +21,7 @@ class Point{
 }
 
 void setup(){
-  size(1800,1000);
+  size(800,800);
   textSize(20);
   stroke(0);
 }
@@ -31,6 +31,9 @@ Point active = null;
 
 void draw(){
   background(255);
+  stroke(255,0,0);
+  noFill();
+  rect(0,0,74/6.1*radius, 75/6.1*radius);
   text(list.size(),20,20);
   for (Point p : list){
     p.display();
