@@ -2,5 +2,5 @@
 
 ### Sample Team
 
-- [Code](IsaacChuangFanClub)
+- [Code](IsaacChuangFanClub/complex_graph.ipynb)
 - [Documentation](IsaacChuangFanClub/final_doc.md)
