@@ -14,7 +14,7 @@ Corey Ferrier, Avneesh Verma, Dhruv Srinivasan, Jade LeSchack, Jyoti Rani
 
 #### Documentation
 
-- [Documentation](q/iQuHack2023_QuEra_q.pdf)
+- [Documentation](q/iQuHackDocumentation.pdf)
 
-- [Presentation](q/)
+- [Presentation](q/iQuHackPresentation.pdf)
 
