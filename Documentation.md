@@ -78,14 +78,11 @@ $$
 $$
 And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
 $$
-\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
+\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega t/2 - \pi)
 $$
- where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
+| ![default](Documentation.assets/default_drive.png) | ![gaussian](Documentation.assets/gaussian_drive.png) | ![sinc^2](Documentation.assets/sinc_drive.png)
 
-
-
-Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 
 ## Post Processing
 
