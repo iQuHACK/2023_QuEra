@@ -53,19 +53,18 @@ def analysis_MIS(graph,result_json):
     print(avg_pp)
     
     plt.bar(pre_unique_IS_sizes, pre_counts/pre_counts.sum())
-    print("FIXED")
-    plt.title("Before")
+    plt.title("Raw Results")
     plt.xticks(pre_unique_IS_sizes)
-    plt.xlabel("IS sizes",fontsize=14)
-    plt.ylabel("probability",fontsize=14)
-    display(plt.show())
+    plt.xlabel("IS Sizes",fontsize=14)
+    plt.ylabel("Probability",fontsize=14)
+    plt.show()
     
     plt.bar(unique_IS_sizes, counts/counts.sum())
-    plt.title("After")
+    plt.title("Processed Results")
     plt.xticks(unique_IS_sizes)
-    plt.xlabel("IS sizes",fontsize=14)
-    plt.ylabel("probability",fontsize=14)
-    display(plt.show())
+    plt.xlabel("IS Sizes",fontsize=14)
+    plt.ylabel("Probability",fontsize=14)
+    plt.show()
     
     return IS_sizes,pp_bitstrings
     
