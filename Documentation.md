@@ -100,10 +100,6 @@ The algorithm consists of three main steps:
 
 It is important to note that this algorithm is $O(2^n)$ where $n$ is the number of ground states that have the potential to be Rydberg. Therefore for large graphs it has the potential to take an immensely long time, and so we place a cut-off dependent on the number of potentially excitable states. We choose this to be $20$ to find MIS solutions in nearly all cases while still taking fewer than a couple seconds. 
 
-## Experience
-
-
-
 ## Sources
 
 https://www.quera.com/aquila
