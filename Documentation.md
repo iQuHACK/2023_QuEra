@@ -26,7 +26,34 @@ $\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state
 
 Interaction Tail
 
-##
+
+
+## Graph Pictures
+
+|                            Graph                             |                                                              |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![con_graph_original](Documentation.assets/con_graph_original-1674976175318-23-1674976180988-25.png) | ![graph_original](Documentation.assets/graph_original-1674976222266-31.png) |
+| ![con_graph_original](Documentation.assets/con_graph_with_four_turned_on_3tails-1674976129323-15-1674976130635-17.png) | ![graph_with_four_turned_on_3tails](Documentation.assets/graph_with_four_turned_on_3tails-1674976229812-34.png) |
+| ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
+|                                                              |                                                              |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
