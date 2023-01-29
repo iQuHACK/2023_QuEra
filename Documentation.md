@@ -31,7 +31,10 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 | ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
 |                                                              |                                                              |
 
-**Figure 2:** Pranav to write description
+**Figure 2:** **Rydberg-Tail Selective State Initialization**
+Background: 
+
+In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
 
 
 
