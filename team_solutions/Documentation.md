@@ -142,7 +142,7 @@ The constraints of the hardware would not allow us to prepare individual qubit s
 
 We constructed a graph that satisfies this criterion. We were able to obtain results with the correct boundary conditions with high probability. The example below shows one of four sections of a clustered graph, with tails added to fix the atom labeled "zero" in the ground state.
 
-| ![tails](../data/cluster2_filled.png) | [notails](../data/cluster2_no_tails_filled.png) |
+| ![tails](../data/cluster2_filled.png) | ![notails](../data/cluster2_no_tails_filled.png) |
 
 ## Graphs
 
