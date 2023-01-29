@@ -6,17 +6,7 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Contents
 
-- [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
-  - [Contents](#contents)
-  - [Theoretical Motivation](#theoretical-motivation)
-  - [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
-  - [Analysis of the $(N,\lambda)$ Regular Polyhedron Junction](#analysis-of-the-nlambda-regular-polyhedron-junction)
-  - [Graph Factory, a Companion for Designing Unit Disk Graphs](#graph-factory-a-companion-for-designing-unit-disk-graphs)
-  - [Using GraphFactor to Make + Test Graphs](#using-graphfactor-to-make--test-graphs)
-  - [Pulse Optimization ](#pulse-optimization-)
-  - [Post Processing](#post-processing)
-  - [Sources](#sources)
-
+[TOC]
 
 ## Theoretical Motivation
 
@@ -41,16 +31,14 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 | ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
 |                                                              |                                                              |
 
-**Figure 2:** Rydberg-Tail Selective State Initialization
+**Figure 2:** **Rydberg-Tail Selective State Initialization**
 Background: 
 
 In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
 
-
-
 ## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
 
-Suppose that $N\geq 2$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
+Suppose that $N$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
 
 $\set{\lambda cos(\frac{2\pi k}{N}),\lambda sin(\frac{2\pi k}{N})\space|\space k\in\set{0,1,...,N-1}}$ where $\lambda$ is a scalar multiple equal to the new radii of the disks under a dilation by the factor $\lambda$. We wish to find the largest integer $N$ such that there is a $\lambda<1$ such that all disks enclose exactly one center.
 
@@ -60,8 +48,7 @@ $d(N)=\sqrt{\lambda^2+\lambda^2-2(\lambda)(\lambda)\cos(\frac{2\pi}{N})}=\sqrt{2
 
 and requiring that $d(N)\geq1$ yields
 
-<<<<<<< HEAD
-$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. Therefore, $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ gives the minimum value of $\lambda$ that guarantees that all disks enclose exactly one center, and if $\lambda_{min}(N)\geq1$, there are necessarily no $\lambda<1$ such that all disks enclose exactly one center. If there is some $\lambda<1$ such that all disks enclose exactly one center, it must be the case that $\lambda_{min}<1$. Since $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ is a monotonically increasing function for all integers $N\geq2$ and $\lambda_{min}(5)\approx0.8507$
+$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows that if $\lambda=\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$, the distance between the centers of adjacent disks is exactly $1$. Since $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ is monotonically increasing for integers $i\geq1$
 
 | ![N4](Documentation.assets/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
 | ---------------------------------- | -------------------------------------------------- |
@@ -69,33 +56,56 @@ $\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. Therefore, $\lambda_{m
 
 **Figure 3:** Regular polyhedron junctions for $(N,\lambda)=(4,1),(5,1),(5,\lambda_{min}(5)),(6,1)$
 
-## Using GraphFactor to Make + Test Graphs
+## GraphFactory: Design and test unit graphs
 
-GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
-| ![N4](Documentation.assets/iquhack/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
-| ---------------------------------- | -------------------------------------------------- |
-| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
-Motivation: We were interested in comparing graph structures based on tail versus edge graph endings. Our initial idea was that the more tail-endings we could include, the more state 0 nodes we'd observe. To test this against the reverse case - graphs with many more edge-endings - we constructed variations on a 16-node 'flower object', shown below. We also tested examples of tree-like and inverted-tree graphs, all modified simply by cursor movements in GraphFactor. 
+To easily design, test, and visualize unit disk graphs, we created software written in Processing which allows a user to design unit disk graphs and export them as lists. This software was the engine that drove our creative exploration of many different types of graphs, which we discuss below. The features of the software include the following:
+* creating, dragging, and deleting nodes
+* displaying the Rydberg Blockade distance
+* automatically representing connections between adjacent nodes
+* displaying the physical spatial restrictions of the QuERA Aquila processor to 75 x 76 $\mu$m
+* producing a warning if two atoms are positioned closer than the 4$\mu$m resolution of the laser.
+* Aligning the atoms on the y-axis to be spaced in increments of $4\mu$m.
 
+![GraphFactory](Documentation.assets/GraphFactory.png)    
 
 
 ## Pulse Optimization 
 
-Denote the sine cardinal function as $${sinc}(t) = \cases{\frac{\sin(t)}{t}&$,t\neq0$\cr1&$,t=0$}$$.
+In the end, our attempts at pulse optimization failed to yield results better than the default pulse shapes used in the tutorials. We tried these pulses on a small number of qubits in simulation. We first tried a Gaussian pulse, and we found that the Gaussian pulse nearly always excited the state outside of the lowest energy eigenspace. The Gaussian waveform chosen was
+$$
+\Omega_{gaussian}(t)= A e^{-(x^2-\tau/2)/(2\sigma^2)}
+$$
+And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
+$$
+\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
+$$
+ where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
-Then consider the wave profile $p_{sinc}(t)=af(\frac{\omega t}{2}-\pi), t\ge0$,
-
- where $${f}(t) = \cases{{sinc^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
-
-Gaussian pulse: $p_{gaussian}(t)=e^{-x^2}$
 
 
 
 Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 
 ## Post Processing
-To be written by Alex
+
+In many cases, after the adiabatic algorithm is completed, the graph will have converged to an invalid solution due to the inherent stochastic nature of the process. In these cases, however, we do not necessarily need to discard the shot. Although we may not have reached a maximally independent set, it is still likely that the algorithm will have converged towards some sort of low energy minima. To this end we introduce a classical postprocessing algorithm, which takes an incomplete result, and attempts to patch it.
+
+The algorithm consists of three main steps:
+
+1. Find any instances of two adjacent Rydberg states on the graph, and set both of them to ground.
+2. Find every ground state that could become Rydberg without violating the independence condition.
+3. Iterate through all combinations of replacing ground states with Rydberg until an MIS solution is found.
+
+![Postprocessing Flow](postprocessingflow.png)
+
+It is important to note that this algorithm is $O(2^n)$ where $n$ is the number of ground states that have the potential to be Rydberg. Therefore for large graphs it has the potential to take an immensely long time, and so we place a cut-off dependent on the number of potentially excitable states. We choose this to be $20$ to find MIS solutions in nearly all cases while still taking fewer than a couple seconds. 
+
+## Experience
+
+
 
 ## Sources
-[1] Ebadi, Sepehr, Alexander Keesling, Madelyn Cain, Tout T. Wang, Harry Levine, Dolev Bluvstein, Giulia Semeghini, et al. “Quantum Optimization of Maximum Independent Set Using Rydberg Atom Arrays.” Science 376, no. 6598 (June 10, 2022): 1209–15. https://doi.org/10.1126/science.abo6587.
-[2] Hartuv, Erez, and Ron Shamir. “A Clustering Algorithm Based on Graph Connectivity.” Information Processing Letters 76 (December 1, 2000): 175–81. https://doi.org/10.1016/S0020-0190(00)00142-3.
+
+https://www.quera.com/aquila
+
+https://github.com/iQuHACK/2023_QuEra
