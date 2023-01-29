@@ -57,7 +57,7 @@ void draw(){
 }
 
 void mouseClicked(){
-  list.add(new Point(round(mouseX/min_dist)*min_dist, mouseY));
+  list.add(new Point(mouseX, round(mouseY/min_dist)*min_dist));
 }
 
 void mousePressed(){
