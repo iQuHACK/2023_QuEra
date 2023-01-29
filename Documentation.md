@@ -1,4 +1,4 @@
-# Modularized Sharp Networks for State Preparation
+# Modularized Sharp Networks for State Preparation into MIS
 QuEra Challenge, iQuHACK 2023
 
 Yale University Team
@@ -10,19 +10,15 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Theoretical Motivation
 
-QuEra Aquila is a 256-qubit quantum processor realized as a programmable array of optically-trapped ultracold $Rb$ atoms. Aquila belongs to the class of neutral atom hardware systems. The Gaussian laser beams that trap the $Rb$ atoms may be used to drive time-dependent Rabi oscillations $\Omega(t)$ and introduce a *global* time-dependent Rydberg detuning $\Delta(t)$.
+QuEra Aquila is a 256-qubit quantum processor realized as a programmable array of optically-trapped ultracold $Rb$ atoms. Aquila belongs to the class of neutral atom hardware platforms. A two-level system is established by identifying the ground state $\ket{0}$ and excited "Rydberg" state $\ket{1}$ of a neutral $Rb$ atom with the electron configurations $[Kr]\space5s^1$ and $[Kr]\space70s^1$, respectively. The Gaussian laser beams that trap the arrays of $Rb$ atoms may be used to drive time-dependent Rabi oscillations $\Omega(t)$ with induced relative phase $e^{2i\phi(t)}$ and introduce a *global* time-dependent Rydberg detuning $\Delta(t)$. The global nature of $\Delta(t)$ imposed by the hardware inherently prevents the *direct* preparation of the $i$th atom in the Rydberg state $\ket{1_i}$. Therefore, it is necessary to place the atoms on the 75 $\mu m$ by 76 $\mu m$ processor in such a way that the geometry and interatomic interactions, which govern the time evolution of the system, would bring an initial uniform state to any given state. It is this sense that a state can be *indirectly* prepared to have the $i$th atom in the Rydberg state $\ket{1_i}$. 
 
-A two-level system is established by identifying the ground state $\ket{0}$ and excited state $\ket{1}$ as the neutral $Rb$ electron configurations $[Kr] 5s^1$ and $[Kr] 70s^1$, respectively.
+The Hamiltonian for the array of $N\space Rb$ atoms is given as:
 
-Hamiltonian of the form:
+$\frac{H}{\hbar}=\sum_i{\Omega (t)(e^{i\phi(t)}\ket{0_i}\bra{1_i}+e^{-i\phi(t)}\ket{1_i}\bra{0_i})}-\Delta(t)\sum_i{\hat{n_i}}+\sum_{i<j}{V_{ij}\hat{n_i}\hat{n_j}}$,
 
-$\frac{H}{\hbar}=\sum_i{\Omega (t)(e^{i\phi(t)}\ket{0_i}\bra{1_i}+e^{-i\phi(t)}\ket{1_i}\bra{0_i})}-\Delta(t)\sum_i{\hat{n_i}}+\sum_{i<j}{V_{ij}\hat{n_i}\hat{n_j}}$
+where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i=1,2,...,N$, $\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency) $C_6 =5.42\cdot10^{-24}$.
 
-where $\ket{0_i}$ is the ground state of the $i$th
-
-interatomic interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency) $C_6 =5.42\cdot10^{-24}$
-
-$\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$, the excitation of the ground state of $Rb$ in which the valence electron of atom $i$  with eigenvalue corresponding to the eigenvalue of 
+$\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$
 
 Interaction Tail
 
@@ -86,3 +82,5 @@ Logistic: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 ## Sources
 
 https://www.quera.com/aquila
+
+https://github.com/iQuHACK/2023_QuEra
