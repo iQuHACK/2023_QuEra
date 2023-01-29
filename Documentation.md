@@ -31,7 +31,7 @@ where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i
 | ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
 |                                                              |                                                              |
 
-**Figure 2:** **Rydberg-Tail Selective State Initialization**
+**Figure 2:** Rydberg-Tail Selective State Initialization
 Background: 
 
 In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
@@ -55,9 +55,9 @@ $d(N)=\sqrt{\lambda^2+\lambda^2-2(\lambda)(\lambda)\cos(\frac{2\pi}{N})}=\sqrt{2
 and requiring that $d(N)\geq1$ yields
 
 <<<<<<< HEAD
-$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. Therefore, $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ gives the minimum value of $\lambda$ that guarantees that all disks enclose exactly one center, and if $\lambda_{min}(N)\geq1$, there are necessarily no $\lambda<1$ such that all disks enclose exactly one center. If there is some $\lambda<1$ such that all disks enclose exactly one center, it must be the case that $\lambda_{min}<1$
+$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. Therefore, $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ gives the minimum value of $\lambda$ that guarantees that all disks enclose exactly one center, and if $\lambda_{min}(N)\geq1$, there are necessarily no $\lambda<1$ such that all disks enclose exactly one center. If there is some $\lambda<1$ such that all disks enclose exactly one center, it must be the case that $\lambda_{min}<1$. Since $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ is a monotonically increasing function for all integers $N\geq2$ and $\lambda_{min}(5)\approx0.8507$
 =======
-$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows that if $\lambda=\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$, the distance between the centers of adjacent disks is exactly $1$. Since $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ is monotonically increasing for integers $i\geq1$
+$\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows that if $\lambda=\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$, the distance between the centers of adjacent disks is exactly $1$. 
 >>>>>>> 38ea6e71404f64db66303616ef1e84c5cc8d07eb
 
 | ![N4](Documentation.assets/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
@@ -107,10 +107,6 @@ Logistic?: $p_{logistic}(t)=\frac{A}{1+Be^{-Cx}}$
 ## Post Processing
 
 22 unextractable for big_ben
-
-## Experience
-
-
 
 ## Sources
 
