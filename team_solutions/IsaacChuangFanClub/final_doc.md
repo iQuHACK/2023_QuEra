@@ -21,10 +21,7 @@ On the picture below one can find the graph structure we have used in the challe
 ## Blockade radius optimization
 
 ## Pulse Optimization
-
-### References
-
-[1] **Minimizing irreversible losses in quantum systems by local counterdiabatic driving**
+![Pulse optimization](./assests/pulse_opt.pdf)
 
 
 # Results
@@ -59,3 +56,7 @@ However, the probability distribution of the 53 excited nodes is not ideal, so n
 |Maximum number of independent set|51|
 |Total number of nodes|93|
 |Delta_final|35 Mrad/s|
+
+![Graph shots analysis](./assests/analysis.png){width=60%}
+
+You can find our slides **[here](https://docs.google.com/presentation/d/1wDG__AXQAmi6gGfz51vwd4McepYewIAuku8Dp_C0dVg/edit?usp=sharing)**.
