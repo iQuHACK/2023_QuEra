@@ -9,9 +9,9 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 - [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
   * [Theoretical Motivation](#theoretical-motivation)
   * [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
-  * [Analysis of the $(N,\lambda)$ Regular Polyhedron Junction](#analysis-of-the---n--lambda---regular-polyhedron-junction)
-  * [GraphFactory: Design and test unit graphs](#graphfactory--design-and-test-unit-graphs)
-  * [Using GraphFactory to Make & Test Graphs](#using-graphfactory-to-make---test-graphs)
+  * [Analysis of the Regular Polyhedron Junction](#analysis-of-the-regular-polyhedron-junction)
+  * [GraphFactory: Design and test unit graphs](#graphfactory-design-and-test-unit-graphs)
+  * [Using GraphFactory to Make & Test Graphs](#using-graphfactory-to-make--test-graphs)
   * [Pulse Optimization](#pulse-optimization)
   * [Post Processing](#post-processing)
   * [Using Rydberg Tails to Enforce Boundary Conditions](#using-rydberg-tails-to-enforce-boundary-conditions)
@@ -30,7 +30,7 @@ $$\frac{H}{\hbar }=\sum_i \Omega (t)(e^{i\phi(t)}|0_i\rangle\langle 1_i|+e^{-i\p
 
 Where $\hat{n_i}=|1_i\rangle\bra{1_i}$ is the projection operator onto the Rydberg state $|1_i\rangle$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy  $C_6 =5.42\cdot10^{-24}$ (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency). The natural characteristic distance $R=(\frac{C_6}{\Delta_{max}})^{1/6}$ is called the unit disk radius. Suppose atoms $i,j$ are in their respective Rydberg states $|1_i\rangle,|1_j\rangle$ and have separation distance $|\vec{r_i}-\vec{r_j}| < R$.  Then the interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}\gg\Delta_{max}$ , demonstrating that a large repulsive interaction cannot be overcome by atom-field coupling in such close proximity. The notion of  the **Rydberg blockade** is simply the tendency for atoms to not simultaneous occupy Rydberg states at distance scales $L\lesssim R$ . It is notable that the potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ has an interaction tail; even for separation distances $|\vec{r_i}-\vec{r_j}| > R$, $V_{ij}$ does not vanish despite being very small as shown in the figure below.
 
-![inverse_sixth_power_spike](Documentation.assets/inverse_sixth_power_spike.png)
+![inverse_sixth_power_spike](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/inverse_sixth_power_spike.png>)
 
 **Figure 1:**  The neighborhood around an inverse sextic potential $V\propto\frac{1}{|\vec{r}|^6}$
 
@@ -38,9 +38,9 @@ Where $\hat{n_i}=|1_i\rangle\bra{1_i}$ is the projection operator onto the Rydbe
 
 |                            Graph                             |                                                              |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![con_graph_original](Documentation.assets/con_graph_original-1674976175318-23-1674976180988-25.png) | ![graph_original](Documentation.assets/graph_original-1674976222266-31.png) |
-| ![con_graph_original](Documentation.assets/con_graph_with_four_turned_on_3tails-1674976129323-15-1674976130635-17.png) | ![graph_with_four_turned_on_3tails](Documentation.assets/graph_with_four_turned_on_3tails-1674976229812-34.png) |
-| ![con_graph_with_one_node_turned_off](Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png) | ![graph_with_one_node_turned_off](Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png) |
+| ![con_graph_original](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/con_graph_original-1674976175318-23-1674976180988-25.png>) | ![graph_original](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/graph_original-1674976222266-31.png>) |
+| ![con_graph_original](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/con_graph_with_four_turned_on_3tails-1674976129323-15-1674976130635-17.png>) | ![graph_with_four_turned_on_3tails](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/graph_with_four_turned_on_3tails-1674976229812-34.png>) |
+| ![con_graph_with_one_node_turned_off](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/con_graph_with_one_node_turned_off-1674976189641-28.png>) | ![graph_with_one_node_turned_off](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/graph_with_one_node_turned_off-1674976240084-37-1674976241998-39.png>) |
 |                                                              |                                                              |
 
 In the top figure, we present a graph with a well defined maximum indepndent set, which was run through the classical simulator and produced the expected value. 
@@ -52,7 +52,7 @@ In the above figure, we present a graph that whose vertices we change from their
 **Figure 2:** **Rydberg-Tail Selective State Initialization**
 Background: 
 
-## Analysis of the $(N,\lambda)$ Regular Polyhedron Junction
+## Analysis of the Regular Polyhedron Junction
 
 Suppose that $N$ unit disks are to be brought as close as possible under the constraint that the centers of the disks must always  define the vertices of a regular polygon of $N$ sides. This can be accomplished by considering the set of points
 
@@ -66,9 +66,9 @@ and requiring that $d(N)\geq1$ yields
 
 $\lambda(N)\geq\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$. It immediately follows that if $\lambda=\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$, the distance between the centers of adjacent disks is exactly $1$. Since $\lambda_{min}(N)=\frac{1}{\sqrt{2(1-cos(\frac{2\pi}{N})}}$ is monotonically increasing for integers $i\geq1$
 
-| ![N4](Documentation.assets/N4.png) | ![N5Unscaled](Documentation.assets/N5Unscaled.png) |
+| ![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/N4.png>) | ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/N5Unscaled.png>) |
 | ---------------------------------- | -------------------------------------------------- |
-| ![N5](Documentation.assets/N5.png) | ![N6](Documentation.assets/N6.png)                 |
+| ![N5](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/N5.png>) | ![N6](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/N6.png>)                 |
 
 **Figure 3:** Regular polyhedron junctions for $(N,\lambda)=(4,1),(5,1),(5,\lambda_{min}(5)),(6,1)$
 
@@ -82,7 +82,7 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 * producing a warning if two atoms are positioned closer than the 4µm resolution of the laser.
 * Aligning the atoms on the y-axis to be spaced in increments of 4µm.
 
-![GraphFactory](Documentation.assets/GraphFactory.png)    
+![GraphFactory](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/GraphFactory.png>)    
 
 
 ## Using GraphFactory to Make & Test Graphs
@@ -124,7 +124,7 @@ The algorithm consists of three main steps:
 2. Find every ground state that could become Rydberg without violating the independence condition.
 3. Iterate through all combinations of replacing ground states with Rydberg until an MIS solution is found.
 
-![Postprocessing Flow](Documentation.assets/postprocessing.png)
+![Postprocessing Flow](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/postprocessing.png>)
 
 It is important to note that this algorithm is $O(2^n)$ where $n$ is the number of ground states that have the potential to be Rydberg. Therefore for large graphs it has the potential to take an immensely long time, and so we place a cut-off dependent on the number of potentially excitable states. We choose this to be $20$ to find MIS solutions in nearly all cases while still taking fewer than a couple seconds.
 
@@ -136,17 +136,17 @@ The constraints of the hardware would not allow us to prepare individual qubit s
 We constructed a graph that satisfies this criterion. We were able to obtain results with the correct boundary conditions with high probability. The example below shows one of four sections of a clustered graph, with tails added to fix the atom labeled "zero" in the ground state.
 
 
-![tails](../data/cluster2_filled.png) | ![notails](../data/cluster2_no_tails_filled.png) |
+![tails](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/data/cluster2_filled.png>) | ![notails](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/data/cluster2_no_tails_filled.png>) |
 --- | ---
 
 ## Graphs
 
-|    ![hyperflower1](Documentation.assets/hyperflower1.png)    | ![hyperflower50](Documentation.assets/hyperflower50.png) |
+|    ![hyperflower1](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/hyperflower1.png>)    | ![hyperflower50](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/hyperflower50.png>) |
 | :----------------------------------------------------------: | :------------------------------------------------------: |
 |                         hyperflower1                         |                      hyperflower50                       |
-| ![more_connected_inverted_tree](Documentation.assets/more_connected_inverted_tree.png) |       ![big_ben](Documentation.assets/big_ben.png)       |
+| ![more_connected_inverted_tree](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/more_connected_inverted_tree.png>) |       ![big_ben](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/big_ben.png>)       |
 |                 more_connected_inverted_tree                 |                         big_ben                          |
-|     ![five_flower](Documentation.assets/five_flower.png)     |                                                          |
+|     ![five_flower](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/five_flower.png>)     |                                                          |
 |                         five_flower                          |                                                          |
 
 
