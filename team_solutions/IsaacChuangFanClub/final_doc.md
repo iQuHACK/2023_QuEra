@@ -26,16 +26,36 @@ On the picture below one can find the graph structure we have used in the challe
 
 [1] **Minimizing irreversible losses in quantum systems by local counterdiabatic driving**
 
+
 # Results
-The result of running the demonstration algorithm with the enhanced parameters is presented below.
+## Best result
+The best result of running the demo algorithm with the enhanced parameters is presented below. Using it, we gain 53 nodes in the maximum independent set with some probability which is depicted below in the bars graph. A graph illustrating the omega function is provided as well.
 
 |Variable|Quantity|
 |:----|----:|
-|Nshots|80|
-|Size of Maximum independent set|51|
+|Nshots|100|
+|Maximum number of independent set|53|
 |Total number of nodes|93|
+|Delta_final|35 Mrad/s|
 
 
-![Graph result](./assests/result.png){width=60%}
+![Best graph result](./assests/result_best.png){width=60%}
 
-![Graph shots analysis](./assests/analysis.png){width=60%}
+![Best graph shots analysis](./assests/analysis_best.png){width=60%}
+
+![Omega graph](./assests/omega-53.png){width=60%}
+
+## Other results
+
+However, the probability distribution of the 53 excited nodes is not ideal, so now we also add some examples of smaller MIS, but with higher concentration in the larger MIS values.
+
+![MIS-51 Graph result](./assests/result.png){width=60%}
+
+![MIS-51 Graph shots analysis](./assests/analysis.png){width=60%}
+
+|Variable|Quantity|
+|:----|----:|
+|Nshots|50|
+|Maximum number of independent set|51|
+|Total number of nodes|93|
+|Delta_final|35 Mrad/s|
