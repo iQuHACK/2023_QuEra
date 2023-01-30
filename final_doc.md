@@ -1,44 +1,41 @@
-# MIS problem evolved
-
-Team IsaacChuangFansClub
+#Hi! We are the IsaacChuangFansClub team!
 
 ---
 
-## Problem
+# MIS problem evolved
+
+# Problem
 
 An analog Hamiltonian simulation computer solves this problem by trying to be in the lowest energy state.
 
-## Results
+# Approach 
 
-### Graph design
+## Graph design
+On the picture below one can find the graph structure we have used in the challenge in order to maximize the number of independent sets. The way the pattern is created is by multiplying the building block element depicted in the next figure. 
+![Graph structure](./assests/graph.png)
 
-### Blockade radius optimization
+![Building block element](./assests/element.png)
 
-### Pulse Optimization
+### Other graphs we've looked into
 
-We tried to use Sels and Polkovnikov's counterdiabatic protocol. The driving Hamiltonian
-$$H =H_0+A= - \Delta(t)\sum_i n_i + \sum_{<{i,j}>}V_{ij}n_i n_j + \sum_i \frac{\Omega(t)}{2}(e^{i\phi(t)}\ket{g_i}\ket{e_i}+e^{-i\phi(t)}\ket{e_i}\ket{g_i})$$
-where $<i,j>$ represents nearest neighbor in our graph. It can be viewed as the sum of a base
-$$H_0 = - \Delta(t)\sum_i n_i + \sum_{<{i,j}>}V_{ij}n_i n_j + \sum_i \frac{\Omega(t)}{2}\cos(\phi(t))\left(\ket{g_i}\bra{e_i}+\ket{e_i}\bra{g_i}\right)$$
-and a counterdiabatic component
-$$A = \sum_i \frac{\Omega(t)}{2}i\sin(\phi(t))\left(\ket{g_i}\bra{e_i}-\ket{e_i}\bra{g_i}\right)$$
-in which way $H_1$ is a purely imaginary part of $H_0$, respecting the constraint according to [1]. 
+## Blockade radius optimization
 
-It is worth noting that the two terms can be rewritten using Pauli operators defined on the $\ket{e_i},\ket{g_i}$ bases as
-$$\begin{align}
-H_0 &=-\Delta(t) \sum_i \frac{\sigma_i^z+1}{2} + \sum_{<i,j>}\frac{V_{ij}}4 (\sigma_i^z+1)(\sigma_j^z+1) + \sum_i \frac{\Omega(t)}2\cos(\phi) \sigma_i^x \\
-	&= -\Delta(t) \sum_i \frac{\sigma_i^z+1}{2} + \sum_{<i,j>}\frac{V_{ij}}4 (\sigma_i^z+1)(\sigma_j^z+1) + \sum_i \frac{\Omega(t)}2\cos(\phi) \sigma_i^x 
-\end{align}$$
-
-$$A=\sum_i\frac{\Omega(t)}2 \sin(\phi) \sigma_i^y$$
-
-
-
-
-
-
+## Pulse Optimization
 
 ### References
 
 [1] **Minimizing irreversible losses in quantum systems by local counterdiabatic driving**
 
+# Results
+The result of running the demonstration algorithm with the enhanced parameters is presented below.
+
+|Variable|Quantity|
+|:----|----:|
+|Nshots|80|
+|Number of independent sets|51|
+|Total number of nodes|93|
+
+
+![Graph result](./assests/result.png){width=60%}
+
+![Graph shots analysis](./assests/analysis.png){width=60%}
