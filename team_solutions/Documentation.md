@@ -1,5 +1,5 @@
 # Modularized Sharp Networks for State Preparation into MIS
-QuEra Challenge, iQuHACK 2023
+1st Place QuEra Challenge, [MIT iQuHACK 2023](https://www.iquise.mit.edu/iQuHACK/2023-01-27)
 
 QuEra Yale University Team
 Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
@@ -7,7 +7,6 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 ## Contents
 
 - [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
-  * [Contents](#contents)
   * [Theoretical Motivation](#theoretical-motivation)
   * [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
   * [Analysis of the $(N,\lambda)$ Regular Polyhedron Junction](#analysis-of-the---n--lambda---regular-polyhedron-junction)
@@ -20,18 +19,16 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
   * [Results](#results)
   * [Sources](#sources)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## Theoretical Motivation
 
-QuEra Aquila is a 256-qubit quantum processor realized as a programmable array of optically-trapped ultracold $Rb$ atoms. Aquila belongs to the class of neutral atom hardware platforms. A two-level system is established by identifying the ground state $\ket{0}$ and excited "Rydberg" state $\ket{1}$ of a neutral $Rb$ atom with the electron configurations $[Kr]\space5s^1$ and $[Kr]\space70s^1$, respectively. The Gaussian laser beams that trap the arrays of $Rb$ atoms may be used to drive time-dependent Rabi oscillations $\Omega(t)$ with induced relative phase $e^{2i\phi(t)}$ and introduce a *global* time-dependent Rydberg detuning $\Delta(t)$. The global nature of $\Delta(t)$ imposed by the hardware inherently prevents the *direct* preparation of the $i$th atom in the Rydberg state $|1_i\lrangle$. Therefore, it is necessary to place the atoms on the 75 $\mu m$ by 76 $\mu m$ processor in such a way that the geometry and interatomic interactions, which govern the time evolution of the system, would bring an initial uniform state to any given state. It is this sense that a state can be *indirectly* prepared to have the $i$th atom in the Rydberg state $ |1_i\rangle $. 
+QuEra Aquila is a 256-qubit quantum processor realized as a programmable array of optically-trapped ultracold $Rb$ atoms. Aquila belongs to the class of neutral atom hardware platforms. A two-level system is established by identifying the ground state $|0_i\rangle$ and excited "Rydberg" state $|1_i\rangle$ of the $i$-th neutral $Rb$ atom with the electron configurations $[Kr]\space5s^1$ and $[Kr]\space70s^1$, respectively. The Gaussian laser beams that trap the arrays of $Rb$ atoms may be used to drive time-dependent Rabi oscillations $\Omega(t)$ with induced relative phase $e^{2i\phi(t)}$ and introduce a *global* time-dependent Rydberg detuning $\Delta(t)$. The global nature of $\Delta(t)$ imposed by the hardware inherently prevents the *direct* preparation of the $i$-th atom in the Rydberg state $|1_i\rangle$. Therefore, it is necessary to place the atoms on the 75 $\mu m$ by 76 $\mu m$ processor in such a way that the geometry and interatomic interactions, which govern the time evolution of the system, would bring an initial uniform state to any given state. It is this sense that a state can be *indirectly* prepared to have the $i$-th atom in the Rydberg state.
 
-The Hamiltonian for the array of $N\space Rb$ atoms is given as:
+The Hamiltonian for the array of $N\space Rb$ atoms is given as,
 
-$\frac{H}{\hbar}=\sum_i{\Omega (t)(e^{i\phi(t)}|0_i\langle\rangle 1_i|+e^{-i\phi(t)}|1_i\rangle\langle 0_i|)}-\Delta(t)\sum_i{\hat{n_i}}+\sum_{i<j}{V_{ij}\hat{n_i}\hat{n_j}}$,
+$$\frac{H}{\hbar }=\sum_i \Omega (t)(e^{i\phi(t)}|0_i\rangle\langle 1_i|+e^{-i\phi(t)}|1_i\rangle\langle 0_i|) -\Delta(t)\sum_i n_i +\sum_{i < j} V_{ij} n_i n_j.$$
 
-where $\ket{0_i}$ and $\ket{1_i}$ are the ground and Rydberg states for atoms $i=1,2,...,N$, $\hat{n_i}=\ket{1_i}\bra{1_i}$ is the projection operator onto the Rydberg state $\ket{1_i}$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy  $C_6 =5.42\cdot10^{-24}$ (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency). The natural characteristic distance $R=(\frac{C_6}{\Delta_{max}})^{1/6}$ is called the unit disk radius. Suppose atoms $i,j$ are in their respective Rydberg states $\ket{1_i},\ket{1_j}$ and have separation distance $|\vec{r_i}-\vec{r_j}|<R$.  Then the interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}\gg\Delta_{max}$ , demonstrating that a large repulsive interaction cannot be overcome by atom-field coupling in such close proximity. The notion of  the **Rydberg blockade** is simply the tendency for atoms to not simultaneous occupy Rydberg states at distance scales $L\lesssim R$ . It is notable that the potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ has an interaction tail; even for separation distances $|\vec{r_i}-\vec{r_j}|>R$, $V_{ij}$ does not vanish despite being very small as shown in the figure below.
+Where $\hat{n_i}=|1_i\rangle\bra{1_i}$ is the projection operator onto the Rydberg state $|1_i\rangle$, and the interatomic interaction potential is of the form $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ with characteristic interaction energy  $C_6 =5.42\cdot10^{-24}$ (working in natural units with $\hbar=1$ such that energy may be expressed in terms of frequency). The natural characteristic distance $R=(\frac{C_6}{\Delta_{max}})^{1/6}$ is called the unit disk radius. Suppose atoms $i,j$ are in their respective Rydberg states $|1_i\rangle,|1_j\rangle$ and have separation distance $|\vec{r_i}-\vec{r_j}| < R$.  Then the interaction potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}\gg\Delta_{max}$ , demonstrating that a large repulsive interaction cannot be overcome by atom-field coupling in such close proximity. The notion of  the **Rydberg blockade** is simply the tendency for atoms to not simultaneous occupy Rydberg states at distance scales $L\lesssim R$ . It is notable that the potential $V_{ij}=\frac{C_6}{|\vec{r_i}-\vec{r_j}|^6}$ has an interaction tail; even for separation distances $|\vec{r_i}-\vec{r_j}| > R$, $V_{ij}$ does not vanish despite being very small as shown in the figure below.
 
 ![inverse_sixth_power_spike](Documentation.assets/inverse_sixth_power_spike.png)
 
@@ -81,9 +78,9 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 * creating, dragging, and deleting nodes
 * displaying the Rydberg Blockade distance
 * automatically representing connections between adjacent nodes
-* displaying the physical spatial restrictions of the QuERA Aquila processor to 75 x 76 $\mu$m
-* producing a warning if two atoms are positioned closer than the 4$\mu$m resolution of the laser.
-* Aligning the atoms on the y-axis to be spaced in increments of $4\mu$m.
+* displaying the physical spatial restrictions of the QuERA Aquila processor to 75 x 76 µm
+* producing a warning if two atoms are positioned closer than the 4µm resolution of the laser.
+* Aligning the atoms on the y-axis to be spaced in increments of 4µm.
 
 ![GraphFactory](Documentation.assets/GraphFactory.png)    
 
@@ -92,8 +89,8 @@ To easily design, test, and visualize unit disk graphs, we created software writ
 
 GraphFactor tool enables user-friendly building of unit-disk graphs that can be sent to run on Aquila. The code, run on Processing, highlights appopriate distances between nodes. Any possibilities larger than the Blockade radius while remaining in a unit disk will be shown with a black connection. Distances smaller than the Blockade radii will be connected in red, signalling the user to move their node. There is an option to display all unit disks at once to visualize graph creation, or to hide these unless actively moving the cursor. In preliminary iterations of the tool, we composed graphs with varying x and y positions as displayed below: 
 
-| ![N4](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.26.25%20AM.png>) |
-| ![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.31.39%20AM.png>) |
+![N5Unscaled](<https://github.com/pdparakh108/2023_QuEra_iQuHack/blob/main/team_solutions/Documentation.assets/iquhack/Screen%20Shot%202023-01-29%20at%2012.31.39%20AM.png>)
+
 
 We encountered errors related to a minimum y-coordinate separation, due to the laser architecture of the machine. To fix this, we modified GraphFactory to only plot particular y-separations, using a row formation. With this feature, drawn points will be set to the nearest y-coordinate allowed. Below are adjusted graphs of interest: 
 
@@ -108,15 +105,13 @@ Motivation: We were interested in comparing graph structures based on tail versu
 
 ## Pulse Optimization 
 
-In the end, our attempts at pulse optimization failed to yield results better than the default pulse shapes used in the tutorials. We tried these pulses on a small number of qubits in simulation. We first tried a Gaussian pulse, and we found that the Gaussian pulse nearly always excited the state outside of the lowest energy eigenspace. The Gaussian waveform chosen was
-$$
-\Omega_{gaussian}(t)= A e^{-(x^2-\tau/2)/(2\sigma^2)}
-$$
+In the end, our attempts at pulse optimization failed to yield results better than the default pulse shapes used in the tutorials. We tried these pulses on a small number of qubits in simulation. We first tried a Gaussian pulse, and we found that the Gaussian pulse nearly always excited the state outside of the lowest energy eigenspace. The Gaussian waveform chosen was,
+
+$$\Omega_{gaussian}(t)= A e^{-(x^2-\tau/2)/(2\sigma^2)}.$$
+
 And the optimization was carried out over $\tau, A,$ and $\sigma$. Next, we tried the cardinal sine function. This produced better results then the Gaussian, which we attributed to a larger area and a softer peak. The waveform chosen for the sinc drive was
-$$
-\Omega_{sinc}(t)=a\text{sinc}^2(\frac{\omega t}{2}-\pi)/(\omega), t\ge0
-$$
- where $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$}$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
+$$\Omega_{sinc}(t)=\frac{a\text{sinc}^2(\frac{\omega t}{2}-\pi)}{\omega}, t\ge 0.$$
+Where, $${f}(t) = \cases{{\text{sinc}^2}(t)&$,t\le0$\cr1&$,t>0$},$$  and the maximum amplitude $a$ and radial frequency $\omega$ are parameters to be determined.
 
 
 ## Post Processing
@@ -171,3 +166,11 @@ Hyperflower|1|36|36|0|36
 https://www.quera.com/aquila
 
 https://github.com/iQuHACK/2023_QuEra
+
+https://github.com/QuEraComputing/QuEra-braket-examples
+
+https://github.com/aws/amazon-braket-examples/tree/main/examples/analog_hamiltonian_simulation
+
+https://github.com/QuEraComputing/quera-ahs-utils
+
+https://www.science.org/doi/10.1126/science.abo6587
