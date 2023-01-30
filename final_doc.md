@@ -1,8 +1,6 @@
-#Hi! We are the IsaacChuangFansClub team!
+# Hi! We are the IsaacChuangFansClub team!
 
 ---
-
-# MIS problem evolved
 
 # Problem
 
