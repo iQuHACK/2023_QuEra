@@ -1,5 +1,5 @@
 # Modularized Networks and Solving MIS with Boundary Conditions
-1st Place QuEra Challenge, [MIT iQuHACK 2023](https://www.iquise.mit.edu/iQuHACK/2023-01-27)
+### 1st Place QuEra Challenge, [MIT iQuHACK 2023](https://www.iquise.mit.edu/iQuHACK/2023-01-27)
 
 QuEra Yale University Team
 Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
