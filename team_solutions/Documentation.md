@@ -6,7 +6,7 @@ Members: Alex Deters, Ben McDonough, Pranav Parakh, Sofia Fausone, Wyatt Kremer
 
 ## Contents
 
-- [Modularized Sharp Networks for State Preparation into MIS](#modularized-sharp-networks-for-state-preparation-into-mis)
+- [Modularized Networks and Solving MIS with Boundary Conditions](#modularized-networks-and-solving-mis-with-boundary-conditions)
   * [Theoretical Motivation](#theoretical-motivation)
   * [Exploiting the Interaction Tail with Tail Graph Feature](#exploiting-the-interaction-tail-with-tail-graph-feature)
   * [Analysis of the Regular Polyhedron Junction](#analysis-of-the-regular-polyhedron-junction)
